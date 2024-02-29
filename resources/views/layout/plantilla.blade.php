@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       body {
-          font-family: 'Arial', sans-serif;
-          background-color: #f4f4f4;
+          font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
           margin: 0;
           padding: 0;
       }
@@ -85,12 +84,9 @@
         }
 
         .menu-item:hover {
-            background-color: #777;
+            background-color: #a1d1cb;
         }
-        .butto{
-          background-color: #48cebc;
-
-        }
+        
         #nosotros-content {
         max-width: 800px;
         margin: 0 auto;
@@ -108,11 +104,11 @@
     }
 
     #nosotros-content h2 {
-      color: #19b4c0;
+      color: #a1d1cb;
     }
 
     #nosotros-content p {
-      color: #333;
+      color: #050606;
         
         line-height: 1.6;
         margin-bottom: 15px;
@@ -132,10 +128,13 @@
 
     <title>@yield('tituloPagina')</title>
   </head>
-  <body>
+  <body style=" background-color: #93dfdd6c;">
     <header>
     
-      <center><h1>Tienda MT Motos</h1></center>
+      <center><h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Tienda MT Motos</h1>
+        {{print_r($datos);}}
+    </center>
+     
   </header>
 
   

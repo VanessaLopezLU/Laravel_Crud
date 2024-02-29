@@ -1,18 +1,21 @@
 <?php
 
+use App\Http\Controllers\PersonasController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/',[PersonasController::class,'index'])->name('personas.index');
+
+Route::get('/create',[PersonasController::class,'create'])->name('personas.create');
+
+Route::get('/store',[PersonasController::class,'store'])->name('personas.store');
+
+Route::get('/show',[PersonasController::class,'show'])->name('personas.show');
+
+Route::get('/edit',[PersonasController::class,'edit'])->name('personas.edit');
+
+Route::get('/update',[PersonasController::class,'update'])->name('personas.update');
+
+Route::get('/destroy',[PersonasController::class,'destroy'])->name('personas.destroy');

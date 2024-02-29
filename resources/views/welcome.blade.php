@@ -2,20 +2,25 @@
 
 @section('tituloPagina','Crud Laravel 8')
 
+
 @section('content')
-<div id="menu-container">
+
+<div  id="menu-container" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman',  serif;">
+    
     <div class="menu-item" id="inicio">Inicio</div>
     <div class="menu-item" id="nosotros">Nosotros</div>
     <div class="menu-item" id="contacto">Contacto</div>
+   
 </div>
 
 <div id="inicio-content" class="con">
     <center><img src="https://http2.mlstatic.com/D_NQ_NP_868157-MCO72507912494_102023-O.webp" alt="Imagen de nosotros"></center>
 </div>
 <center>
-<div id="nosotros-content" class="con">
+<div id="nosotros-content" class="con" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
     <div class="image">
         <h2>Nuestra Tienda MT Motos</h2>
+       
         <img src="https://http2.mlstatic.com/D_NQ_NP_868157-MCO72507912494_102023-O.webp" alt="Motos MT en nuestra tienda">
     </div>
     <p>
@@ -40,9 +45,9 @@
 </center>
 
 
-<div id="contact-form" class="con">
+<div id="contact-form" class="con" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
     <div class="image">
-        <h2>Contacto</h2>
+        <h2 style="color: #a1d1cb">Formulario de Registro </h2>
         <img src="https://http2.mlstatic.com/D_NQ_NP_868157-MCO72507912494_102023-O.webp" alt="Imagen de inicio de sesión">
     </div>
 
@@ -60,7 +65,7 @@
             <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" name="telefono" required>
  <br>
-            <center><button class="button" type="submit"><i class="fa fa-paper-plane"></i> Enviar</button></center>
+            <center><button style="background-color:#48cebc "  type="submit"><i class="fa fa-paper-plane"></i> Enviar</button></center>
         </form>
     </div>
 </div>
