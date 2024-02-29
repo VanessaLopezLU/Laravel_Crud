@@ -10,7 +10,7 @@ Route::get('/',[PersonasController::class,'index'])->name('personas.index');
 
 Route::get('/create',[PersonasController::class,'create'])->name('personas.create');
 
-Route::get('/store',[PersonasController::class,'store'])->name('personas.store');
+Route::post('/store',[PersonasController::class,'store'])->name('personas.store');
 
 Route::get('/show',[PersonasController::class,'show'])->name('personas.show');
 

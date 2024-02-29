@@ -20,7 +20,8 @@ class PersonasController extends Controller
     {
         //El formulario donde agregaremos los datos de la clase personas(registro)
 
-        $formulario = "<center>
+        $formulario = "
+        <p style='color: #fff; text-align: left; margin-top: 10px;'>Volver a la <a href='/'>página inicial</a></p><center>
         <div class='container'  style='background-color: #a1d1cb; max-width: 400px' >
         <div id='contact-form' class='con' style='font-family:Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;'>
          <br>
@@ -30,18 +31,19 @@ class PersonasController extends Controller
            </div>
 
           <div>
-             <form action='procesar_formulario.php' method='POST' style='display: flex; flex-direction: column; align-items: center;'>
+             <form action='/store' method='POST' style='display: flex; flex-direction: column; align-items: center;'>
+             
                  <label for='nombre' style='margin-bottom: 5px; color: #555;'>Nombre:</label>
                  <input type='text' id='nombre' name='nombre' required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
 
-                 <label for='correo' style='margin-bottom: 5px; color: #555;'>Apellido Paterno:</label>
-                 <input type='email' id='correo' name='correo' required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
+                 <label for='apellido_paterno' style='margin-bottom: 5px; color: #555;'>Apellido Paterno:</label>
+                 <input type='text' id='apellido_paterno' name='apellido_paterno' required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
 
-                 <label for='password' style='margin-bottom: 5px; color: #555;'>Apellido Materno :</label>
-                 <input type='password' id='password' name='password' required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
+                 <label for='apellido_materno' style='margin-bottom: 5px; color: #555;'>Apellido Materno :</label>
+                 <input type='txt' id='apellido_materno' name='apellido_materno' required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
 
-                 <label for='telefono' style='margin-bottom: 5px; color: #555;'>Fecha de nacimiento :</label>
-                 <input type='tel' id='telefono' name='telefono' required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
+                 <label for='fecha' style='margin-bottom: 5px; color: #555;'>Fecha de nacimiento :</label>
+                 <input type='date' id='fecha_nacimiento' name='fecha' required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
                  <br>
                  <button style='background-color:#48cebc; color: #fff; cursor: pointer; transition: background-color 0.3s ease; padding: 10px; border: none; border-radius: 5px;' type='submit'><i class='fa fa-paper-plane'></i> Enviar</button>
                  <br>
@@ -50,6 +52,9 @@ class PersonasController extends Controller
         </div>
         </div></center>";
         return ($formulario);
+
+       
+
     }
 
 
@@ -57,6 +62,23 @@ class PersonasController extends Controller
     {
         //Guardar los datos en la BD
 
+        $request->validate([
+            'nombre' => 'required|string',
+            'apellido_paterno' => 'required|string',
+            'apellido_materno' => 'required|string',
+            'fecha_nacimiento' => 'required|date',
+        ]);
+    
+        // Crear un nuevo registro en la base de datos
+        $persona = new Personas();
+        $persona->nombre = $request->input('nombre');
+        $persona->apellido_paterno = $request->input('apellido_paterno');
+        $persona->apellido_materno = $request->input('apellido_materno');
+        $persona->fecha_nacimiento = $request->input('fecha_nacimiento');
+        $persona->save();
+    
+        // Redirigir a la página de inicio o a donde sea necesario
+        return redirect('/');
     }
 
 
