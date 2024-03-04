@@ -11,8 +11,10 @@ class PersonasController extends Controller
     public function index()
     {
         // pagina de inici
-        $datos = "impresiones desde el controller index";
-        return view('welcome', compact('datos'));
+        //$datos = "impresiones desde el controller index";
+        //return view('inicio', compact('datos'));
+        $datos=Personas::all();
+        return view('inicio', compact('datos'));
     }
 
 
@@ -21,13 +23,14 @@ class PersonasController extends Controller
         //El formulario donde agregaremos los datos de la clase personas(registro)
 
         $formulario = "
-        <p style='color: #fff; text-align: left; margin-top: 10px;'>Volver a la <a href='/'>página inicial</a></p><center>
+        <center>
+        <p style='color: #fff; text-align: left; margin-top: 10px;'> <a href='" . route('personas.index') . "'>Inicio</a></p><center>
         <div class='container'  style='background-color: #a1d1cb; max-width: 400px' >
         <div id='contact-form' class='con' style='font-family:Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;'>
          <br>
          <div class='image'>
             <h2 style='color: #fff;'>Formulario de Registro</h2>
-            <img src='https://http2.mlstatic.com/D_NQ_NP_868157-MCO72507912494_102023-O.webp' alt='Imagen de inicio de sesión' style='max-width: 100%; height: 300px; border-radius: 5px;'>
+            <img src='https://cdn-icons-png.flaticon.com/512/4205/4205906.png' alt='Imagen de inicio de sesión' style='max-width: 100%; height: 300px; border-radius: 5px;'>
            </div>
 
           <div>
@@ -50,7 +53,8 @@ class PersonasController extends Controller
                </form>
           </div>
         </div>
-        </div></center>";
+        </div></center>
+    ";
         return ($formulario);
 
        
@@ -127,6 +131,7 @@ class PersonasController extends Controller
         </tr>
     </tbody>
 </table>
+<p style='color: #fff; text-align: left; margin-top: 10px;'> <a href='" . route('personas.index') . "'>Inicio</a></p><center>
 ";
 
         return ($tableContent);
@@ -179,5 +184,6 @@ class PersonasController extends Controller
     public function destroy(Personas $personas)
     {
         //Eliminar un registro de la tabla personas
+        return 'aqui se elimina';
     }
 }

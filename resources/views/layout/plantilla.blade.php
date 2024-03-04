@@ -119,6 +119,9 @@
             padding: 15px;
         }
     }
+    .card{
+      width: 80%;
+    }
   </style>
     
 
@@ -131,11 +134,12 @@
   <body style=" background-color: #93dfdd6c;">
     <header>
     
-      <center><h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Tienda MT Motos</h1>
-        {{print_r($datos);}}
+      <center><h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Tiendas TecnoVan</h1>
+        
     </center>
      
   </header>
+  
 
   
   <main>
