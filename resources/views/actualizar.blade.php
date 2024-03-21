@@ -34,7 +34,7 @@
                                 <i class="fas fa-arrow-left"></i> Regresar
                             </button>
                             
-                         <button style='background-color:#46da75; color: #fff; cursor: pointer; transition: background-color 0.3s ease; padding: 10px; border: none; border-radius: 5px;' type='submit'><i class='fa fa-paper-plane'></i> Actualizar</button>
+                         <button style='background-color:#46da75; color: #fff; cursor: pointer; transition: background-color 0.3s ease; padding: 10px; border: none; border-radius: 5px;' type='submit'><i class="fas fa-edit"></i> Actualizar</button>
                          </div>
                          
                          <br>

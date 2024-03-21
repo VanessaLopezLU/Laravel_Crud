@@ -16,8 +16,9 @@
                    </div>
         
                   <div>
-                     <form action='#' method='POST' style='display: flex; flex-direction: column; align-items: center;'>
-                     
+                     <form action='{{route('personas.store')}}' method='POST' style='display: flex; flex-direction: column; align-items: center;'>
+                       @csrf
+                        
                          <label for='' style='margin-bottom: 5px; color: #555;'>Nombre:</label>
                          <input type='text'  name='nombre' class="form-control" required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
         
@@ -35,7 +36,7 @@
                                 <i class="fas fa-arrow-left"></i> Regresar
                             </button>
                             
-                         <button style='background-color:#48cebc; color: #fff; cursor: pointer; transition: background-color 0.3s ease; padding: 10px; border: none; border-radius: 5px;' type='submit'><i class='fa fa-paper-plane'></i> Enviar</button>
+                         <button style='background-color:#48cebc; color: #fff; cursor: pointer; transition: background-color 0.3s ease; padding: 10px; border: none; border-radius: 5px;' type='submit'><span class="fas fa-user-plus"></span> Enviar</button>
                          </div>
                          
                          <br>

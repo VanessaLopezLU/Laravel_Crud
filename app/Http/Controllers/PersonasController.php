@@ -30,7 +30,6 @@ class PersonasController extends Controller
     {
         //Guardar los datos en la BD
 
-
         $request->validate([
             'nombre' => 'required|string',
             'apellido_paterno' => 'required|string',
@@ -40,14 +39,15 @@ class PersonasController extends Controller
 
         // Crear un nuevo registro en la base de datos
         $persona = new Personas();
-        $persona->nombre = $request->input('nombre');
-        $persona->apellido_paterno = $request->input('apellido_paterno');
-        $persona->apellido_materno = $request->input('apellido_materno');
-        $persona->fecha_nacimiento = $request->input('fecha_nacimiento');
+        $persona->nombre = $request->post('nombre');
+        $persona->apellido_paterno = $request->post('apellido_paterno');
+        $persona->apellido_materno = $request->post('apellido_materno');
+        $persona->fecha_nacimiento = $request->post('fecha_nacimiento');
         $persona->save();
 
         // Redirigir a la página de inicio o a donde sea necesario
-        return redirect('/');
+        return redirect()->route('personas.index')->with("success", "Registro Agregado con Exito  ..!");
+        //print_r($_POST);
     }
 
 
