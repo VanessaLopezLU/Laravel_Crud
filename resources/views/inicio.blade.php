@@ -47,8 +47,16 @@
                               <td>{{$item->apellido_paterno}}</td>
                               <td>{{$item->apellido_materno}}</td>
                               <td>{{$item->fecha_nacimiento}}</td>
-                              <td><a href="{{ route('personas.edit', $item->id)}}"><i class="fas fa-edit" style="color: rgb(48, 188, 104)"></i></a></td>
-                              <td><a href="{{ route('personas.show', $item->id)}}"><i class="fas fa-trash-alt" style="color: rgb(217, 53, 77)"></i></a></td>
+                              <td>
+                                 <form action="{{ route('personas.edit', $item->id)}}" method="GET">
+                                    <a href="{{ route('personas.edit', $item->id)}}"><i class="fas fa-edit" style="color: rgb(48, 188, 104)"></i></a>
+                                 </form>
+                              </td>
+                              <td>
+                                 <form action="">
+                                    <a href="{{ route('personas.show', $item->id)}}"><i class="fas fa-trash-alt" style="color: rgb(217, 53, 77)"></i></a>
+                                 </form>
+                              </td>
                           </tr>
                       @endforeach
                    </tbody>

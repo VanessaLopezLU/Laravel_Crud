@@ -6,6 +6,9 @@
     <h5 class="card-header">Actualizar Registro</h5>
 
       <div class="card-body" >
+        @php
+          // print_r($personas);
+        @endphp
         <p class="card-text" >
          
                  <br>
@@ -15,26 +18,27 @@
                    </div>
         <br>
                   <div>
-                     <form action='#' method='POST' style='display: flex; flex-direction: column; align-items: center;'>
-                     
+                     <form action='{{route('personas.update', $personas->id)}}' method='POST' style='display: flex; flex-direction: column; align-items: center;'>
+                       @csrf
+                       @method("PUT")
                          <label for='' style='margin-bottom: 5px; color: #555;'>Nombre:</label>
-                         <input type='text'  name='nombre' class="form-control" required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
+                         <input type='text'  name='nombre' class="form-control" required value="{{$personas->nombre}}"  style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
         
                          <label for='' style='margin-bottom: 5px; color: #555;'>Apellido Paterno:</label>
-                         <input type='text' name='apellido_paterno'  class="form-control"  required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
+                         <input type='text' name='apellido_paterno'  class="form-control"  required value="{{$personas->apellido_paterno}}" style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
         
                          <label for='' style='margin-bottom: 5px; color: #555;'>Apellido Materno :</label>
-                         <input type='text'  name='apellido_materno'  class="form-control" required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
+                         <input type='text'  name='apellido_materno'  class="form-control" required value="{{ $personas->apellido_materno}}" style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
         
                          <label for=''>Fecha de nacimiento:</label>
-                         <input type='date'  name='fecha_nacimiento'   class="form-control" required pattern='\d{4}-\d{2}-\d{2}' inputmode='numeric' placeholder='AAAA-MM-DD'>
+                         <input type='date'  name='fecha_nacimiento'   class="form-control" required value="{{ $personas->fecha_nacimiento}}" pattern='\d{4}-\d{2}-\d{2}' inputmode='numeric' placeholder='AAAA-MM-DD'>
                          <br>
                          <div>
                             <button onclick="window.location='{{ route("personas.index") }}'" style='background-color:#73c7dc; color: #fff; cursor: pointer; transition: background-color 0.3s ease; padding: 10px; border: none; border-radius: 5px;'>
                                 <i class="fas fa-arrow-left"></i> Regresar
                             </button>
                             
-                         <button style='background-color:#46da75; color: #fff; cursor: pointer; transition: background-color 0.3s ease; padding: 10px; border: none; border-radius: 5px;' type='submit'><i class="fas fa-edit"></i> Actualizar</button>
+                         <button  style='background-color:#46da75; color: #fff; cursor: pointer; transition: background-color 0.3s ease; padding: 10px; border: none; border-radius: 5px;' type='submit'><i class="fas fa-edit"></i> Actualizar</button>
                          </div>
                          
                          <br>
