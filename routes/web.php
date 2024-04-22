@@ -12,10 +12,10 @@ Route::get('/create', [PersonasController::class, 'create'])->name('personas.cre
 
 Route::post('/store', [PersonasController::class, 'store'])->name('personas.store');
 
-Route::get('/show', [PersonasController::class, 'show'])->name('personas.show');
+Route::get('/show/{id}', [PersonasController::class, 'show'])->name('personas.show');
 
 Route::get('/edit/{id}', [PersonasController::class, 'edit'])->name('personas.edit');
 
 Route::put('/update/{id}', [PersonasController::class, 'update'])->name('personas.update');
 
-Route::get('/destroy', [PersonasController::class, 'destroy'])->name('personas.destroy');
+Route::delete('/destroy/{id}', [PersonasController::class, 'destroy'])->name('personas.destroy');

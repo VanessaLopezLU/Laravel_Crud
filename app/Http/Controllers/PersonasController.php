@@ -51,11 +51,13 @@ class PersonasController extends Controller
     }
 
 
-    public function show(Personas $personas)
+    public function show($id)
     {
 
         // Obtener un registro de la tabla personas 
-        return view('eliminar');
+        $personas = Personas::find($id);
+        return view('eliminar', compact('personas'));
+        //return view('eliminar');
     }
 
 
@@ -82,10 +84,11 @@ class PersonasController extends Controller
     }
 
 
-    public function destroy(Personas $personas)
+    public function destroy(Personas $personas, $id)
     {
         //Eliminar un registro de la tabla personas
-
-        return 'aqui se elimina';
+        $persona = Personas::find($id);
+        $persona->delete();
+        return redirect()->route('personas.index')->with("success", "Registro Eliminado con Exito  ..!");
     }
 }

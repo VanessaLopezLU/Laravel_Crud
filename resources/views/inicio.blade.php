@@ -53,7 +53,7 @@
                                  </form>
                               </td>
                               <td>
-                                 <form action="">
+                                 <form action="{{route('personas.show', $item->id)}}" method="GET">
                                     <a href="{{ route('personas.show', $item->id)}}"><i class="fas fa-trash-alt" style="color: rgb(217, 53, 77)"></i></a>
                                  </form>
                               </td>
