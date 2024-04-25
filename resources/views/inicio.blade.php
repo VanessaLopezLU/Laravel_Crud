@@ -60,8 +60,16 @@
                           </tr>
                       @endforeach
                    </tbody>
-             </table>
+             </table> 
           </div>
+          <hr>
+    
+            <div class="row">
+             <div class="col-sm-12">
+               {{$datos-> links()}}
+             </div>
+            </div>
+        
       </p>      
     </div>
   </div>
