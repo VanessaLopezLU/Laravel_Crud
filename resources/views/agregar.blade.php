@@ -18,7 +18,9 @@
                   <div>
                      <form action='{{route('personas.store')}}' method='POST' style='display: flex; flex-direction: column; align-items: center;'>
                        @csrf
-                        
+                         <label for="foto" style="margin-bottom: 5px; color: #555;">Foto:</label>
+                         <input type="file" name="foto" id="foto" accept="image/*" class="form-control" style="padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                       
                          <label for='' style='margin-bottom: 5px; color: #555;'>Nombre:</label>
                          <input type='text'  name='nombre' class="form-control" required style='padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;'>
         

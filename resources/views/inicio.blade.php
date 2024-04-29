@@ -33,6 +33,7 @@
            <div class="table table-responsive">
              <table class="table table-sm table-bordered">
                  <thead>
+                      <th>Foto</th>
                       <th>Nombre</th>
                       <th>Apellido Paterno</th>
                       <th>Apellido Materno</th>
@@ -43,6 +44,9 @@
                  <tbody>
                       @foreach ( $datos as $item )
                           <tr>
+                              <td> 
+                                 <img src='{{ asset('storage/' . $item->foto)}}'  style="width: 80px; height: 60px;">
+                              </td>
                               <td>{{$item->nombre}}</td>
                               <td>{{$item->apellido_paterno}}</td>
                               <td>{{$item->apellido_materno}}</td>

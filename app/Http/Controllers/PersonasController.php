@@ -31,6 +31,7 @@ class PersonasController extends Controller
         //Guardar los datos en la BD
 
         $request->validate([
+            'foto' => 'required|string',
             'nombre' => 'required|string',
             'apellido_paterno' => 'required|string',
             'apellido_materno' => 'required|string',
@@ -39,6 +40,7 @@ class PersonasController extends Controller
 
         // Crear un nuevo registro en la base de datos
         $persona = new Personas();
+        $persona->foto = $request->post('foto');
         $persona->nombre = $request->post('nombre');
         $persona->apellido_paterno = $request->post('apellido_paterno');
         $persona->apellido_materno = $request->post('apellido_materno');
@@ -75,6 +77,7 @@ class PersonasController extends Controller
     {
         //Actualizar un registro de la tabla personas
         $persona = Personas::find($id);
+        $persona->foto = $request->post('foto');
         $persona->nombre = $request->post('nombre');
         $persona->apellido_paterno = $request->post('apellido_paterno');
         $persona->apellido_materno = $request->post('apellido_materno');
