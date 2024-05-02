@@ -18,6 +18,7 @@
             </div>
             <table class="table table-sm  table-hover table-bordered" style="background-color: #a3d9dd">
                 <thead>
+                    <th>Foto</th>
                     <th>Nombre</th>
                     <th>Apellido Paterno</th>
                     <th>Apellido Materno</th>
@@ -25,6 +26,13 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td>
+                            @if($personas->foto)
+                                <img src="{{ asset('storage/' . $personas->foto) }}" alt="Foto de {{ $personas->nombre }}" width="100">
+                            @else
+                                <span>No hay foto</span>
+                            @endif
+                        </td>
                      <td>{{$personas->nombre}}</td>
                      <td>{{$personas->apellido_paterno}}</td>
                      <td>{{ $personas->apellido_materno}}</td>

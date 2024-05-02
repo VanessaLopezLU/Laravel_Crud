@@ -16,7 +16,7 @@
                    </div>
         
                   <div>
-                     <form action='{{route('personas.store')}}' method='POST' style='display: flex; flex-direction: column; align-items: center;'>
+                     <form action='{{route('personas.store')}}' method='POST' enctype="multipart/form-data" style='display: flex; flex-direction: column; align-items: center;'>
                        @csrf
                          <label for="foto" style="margin-bottom: 5px; color: #555;">Foto:</label>
                          <input type="file" name="foto" id="foto" accept="image/*" class="form-control" style="padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
