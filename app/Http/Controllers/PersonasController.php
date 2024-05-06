@@ -20,7 +20,7 @@ class PersonasController extends Controller
         //$datos = "impresiones desde el controller index";
         //return view('inicio', compact('datos'));
         $datos = Personas::orderBy('nombre', 'asc')->paginate(3);
-        return view('inicio', compact('datos'));
+        return view('home', compact('datos'));
     }
 
 

@@ -19,3 +19,9 @@ Route::get('/edit/{id}', [PersonasController::class, 'edit'])->name('personas.ed
 Route::put('/update/{id}', [PersonasController::class, 'update'])->name('personas.update');
 
 Route::delete('/destroy/{id}', [PersonasController::class, 'destroy'])->name('personas.destroy');
+
+
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
