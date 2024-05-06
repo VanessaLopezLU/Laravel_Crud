@@ -7,7 +7,7 @@
 
 @section('content')
 <center>
- <div style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman',  serif;" class="card" >
+ <div style='background-color: #bedcd7; max-width: 800px ;font-family:Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;' class="card" >
     <h2 class="card-header">CRUD CON LARAVEL 8 Y MYSQL</h2>
     <div class="card-body">
        
@@ -31,7 +31,7 @@
       <hr>
         <p class="card-text">
            <div class="table table-responsive">
-             <table class="table table-sm table-bordered">
+             <table class="table table-sm table-bordered" style='background-color: #bedcd7;'>
                  <thead>
                       <th>Foto</th>
                       <th>Nombre</th>

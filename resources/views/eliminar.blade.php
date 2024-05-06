@@ -2,7 +2,7 @@
 @section('tituloPagina','Eliminar Registro')
 
 @section('content')
-<center><div class="card" style='background-color: #a1d1cb; max-width: 800px ;font-family:Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;'>
+<center><div class="card" style='background-color: #a8e1db; max-width: 700px ;font-family:Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;'>
     <h5 class="card-header">Eliminar el  Registro .!</h5>
 
       <div class="card-body" >
@@ -10,13 +10,13 @@
             
           <br>
             <div class='image'>
-                    <img src='https://cdn-icons-png.flaticon.com/512/2910/2910773.png' alt='Imagen de inicio de sesión' style='max-width: 100%; height: 300px; border-radius: 5px;'>
+                    <img src='https://cdn-icons-png.flaticon.com/512/2910/2910773.png' alt='Imagen de inicio de sesión' style='max-width: 100%; height: 200px; border-radius: 5px;'>
              </div>
             <br>
             <div class='alert alert-danger' role='alert'>
                 Estas seguro que deseas eliminar el registro..!
             </div>
-            <table class="table table-sm  table-hover table-bordered" style="background-color: #a3d9dd">
+            <table class="table table-sm  table-hover table-bordered" style="background: #a3d9dd">
                 <thead>
                     <th>Foto</th>
                     <th>Nombre</th>

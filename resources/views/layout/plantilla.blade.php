@@ -131,12 +131,10 @@
 
     <title>@yield('tituloPagina')</title>
   </head>
-  <body style=" background-color: #93dfdd6c;">
+  <body style="background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);">
     <header>
     
-      <center><h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Tiendas TecnoVan</h1>
-        
-    </center>
+      <br>
      
   </header>
   
