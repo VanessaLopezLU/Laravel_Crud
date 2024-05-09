@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')  
 @section('tituloPagina','Actualizar Registro')
 
-@section('content')
+@section('container')
 <center><div class="card" style='background-color: #92c4db; max-width: 500px ;font-family:Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;'>
     <h5 class="card-header">Actualizar Registro</h5>
 

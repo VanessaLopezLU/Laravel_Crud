@@ -1,4 +1,5 @@
 @extends('layouts.plantilla')
+@section('tituloPagina','Crud Laravel 8')
 
 @section('content')
 <div class="container">

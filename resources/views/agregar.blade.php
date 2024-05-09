@@ -2,7 +2,7 @@
 
 @section('tituloPagina','Crear un Nuevo Registro')
 
-@section('content')
+@section('container')
 <center><div class="card" style='background-color: #cba0d1; max-width: 400px ;font-family:Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;'>
     <h5 class="card-header">Agregar Nueva Persona</h5>
 

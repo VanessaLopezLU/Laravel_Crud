@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')  
 @section('tituloPagina','Eliminar Registro')
 
-@section('content')
+@section('container')
 <center><div class="card" style='background-color: #a8e1db; max-width: 700px ;font-family:Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;'>
     <h5 class="card-header">Eliminar el  Registro .!</h5>
 
