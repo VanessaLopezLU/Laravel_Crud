@@ -19,8 +19,13 @@ class PersonasController extends Controller
         // pagina de inici
         //$datos = "impresiones desde el controller index";
         //return view('inicio', compact('datos'));
+
+        return view('auth/login');
+    }
+    public function inicio()
+    {
         $datos = Personas::orderBy('nombre', 'asc')->paginate(3);
-        return view('home', compact('datos'));
+        return view('inicio', compact('datos'));
     }
 
 
@@ -30,6 +35,7 @@ class PersonasController extends Controller
 
         return view('agregar');
     }
+
 
 
     public function store(Request $request)

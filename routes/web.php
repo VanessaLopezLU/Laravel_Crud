@@ -3,8 +3,11 @@
 use App\Http\Controllers\PersonasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
 
 
+Route::get('/inicio', [PersonasController::class, 'inicio'])->name('personas.inicio');
 
 
 Route::get('/', [PersonasController::class, 'index'])->name('personas.index');
@@ -25,8 +28,14 @@ Route::delete('/destroy/{id}', [PersonasController::class, 'destroy'])->name('pe
 
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [RegisterController::class, 'register']);
+
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');

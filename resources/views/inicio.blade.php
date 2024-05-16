@@ -1,12 +1,13 @@
 @extends('layouts.plantilla')
 
-@section('tituloPagina','Crud Laravel 8')
+@section('tituloPagina','Crud Laravel 8 inicio')
 
 
 
 
-@section('contentido')
+@section('container')
 <center>
+   
  <div style='background-color: #bedcd7; max-width: 800px ;font-family:Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;' class="card" >
     <h2 class="card-header">CRUD CON LARAVEL 8 Y MYSQL</h2>
     <div class="card-body">
