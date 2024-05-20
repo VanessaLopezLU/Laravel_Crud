@@ -58,7 +58,7 @@
 
                 <br>
                          <div>
-                            <button onclick="window.location='{{ route("personas.index") }}'" style='background-color:#73c7dc; color: #fff; cursor: pointer; transition: background-color 0.3s ease; padding: 10px; border: none; border-radius: 5px;'>
+                            <button onclick="window.location='{{ route("personas.inicio") }}'" style='background-color:#73c7dc; color: #fff; cursor: pointer; transition: background-color 0.3s ease; padding: 10px; border: none; border-radius: 5px;'>
                                 <i class="fas fa-arrow-left"></i> Regresar
                             </button>
                             

@@ -6,6 +6,8 @@
 
 
 @section('container')
+
+
 <center>
    
  <div style='background-color: #bedcd7; max-width: 800px ;font-family:Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;' class="card" >
@@ -29,6 +31,17 @@
         <a href="{{route('personas.create')}}" class="btn btn-primary"><span class="fas fa-user-plus"></span>  Agregar Nueva Persona</a>
          
       </p>
+      <form action="{{ route('personas.inicio') }}" method="GET" class="mb-2">
+         <div class="input-group">
+             <input type="text" name="search" class="form-control" placeholder="Buscar por nombre o apellido" value="{{ request()->input('search') }}">
+             <button class="btn btn-outline-primary" type="submit">
+                 <i class="fas fa-search"></i> Buscar
+             </button>
+             <a href="{{ route('personas.inicio') }}" class="btn btn-success">
+                 <i class="fas fa-broom"></i> Limpiar
+             </a>
+         </div>
+     </form>
       <hr>
         <p class="card-text">
            <div class="table table-responsive">

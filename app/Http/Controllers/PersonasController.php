@@ -22,10 +22,19 @@ class PersonasController extends Controller
 
         return view('auth/login');
     }
-    public function inicio()
+    public function inicio(Request $request)
     {
-        $datos = Personas::orderBy('nombre', 'asc')->paginate(3);
-        return view('inicio', compact('datos'));
+        $search = $request->input('search');
+        $query = Personas::query();
+
+        if ($search) {
+            $query->where('nombre', 'LIKE', "%{$search}%")
+                ->orWhere('apellido_paterno', 'LIKE', "%{$search}%")
+                ->orWhere('apellido_materno', 'LIKE', "%{$search}%");
+        }
+
+        $datos = $query->orderBy('nombre', 'asc')->paginate(3);
+        return view('inicio', compact('datos', 'search'));
     }
 
 
@@ -64,7 +73,7 @@ class PersonasController extends Controller
         $persona->save();
 
         // Redirigir a la página de inicio o a donde sea necesario
-        return redirect()->route('personas.index')->with("success", "Registro Agregado con Exito  ..!");
+        return redirect()->route('personas.inicio')->with("success", "Registro Agregado con Exito  ..!");
         //print_r($_POST);
     }
 
@@ -101,7 +110,7 @@ class PersonasController extends Controller
         //Actualizar un registro de la tabla personas
         $persona = Personas::find($id);
         if (!$persona) {
-            return redirect()->route('personas.index')->with("error", "Persona no encontrada.");
+            return redirect()->route('personas.inicio')->with("error", "Persona no encontrada.");
         }
 
         // Procesar la nueva foto
@@ -121,7 +130,7 @@ class PersonasController extends Controller
         $persona->apellido_materno = $request->post('apellido_materno');
         $persona->fecha_nacimiento = $request->post('fecha_nacimiento');
         $persona->save();
-        return redirect()->route('personas.index')->with("success", "Registro Actualizado con Exito  ..!");
+        return redirect()->route('personas.inicio')->with("success", "Registro Actualizado con Exito  ..!");
     }
 
 
@@ -129,7 +138,7 @@ class PersonasController extends Controller
     {
         $persona = Personas::find($id);
         if (!$persona) {
-            return redirect()->route('personas.index')->with("error", "Persona no encontrada.");
+            return redirect()->route('personas.inicio')->with("error", "Persona no encontrada.");
         }
 
         if ($persona->foto) {
@@ -137,6 +146,6 @@ class PersonasController extends Controller
         }
 
         $persona->delete();
-        return redirect()->route('personas.index')->with("success", "Registro eliminado con éxito.");
+        return redirect()->route('personas.inicio')->with("success", "Registro eliminado con éxito.");
     }
 }
